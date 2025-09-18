@@ -29,6 +29,8 @@ size3 = 80
 ffile4 = 'configurations/struc_theta_Q_019036.txt'
 size4 = 80
 
+test_dir('realizations')
+
 for i in range(1000):
     j = i
 
@@ -160,7 +162,6 @@ for i in range(1000):
     MAE = mean_absolute_error(y_true,y_pred)
     print(j, MAE)
     
-    test_dir('realizations')
 
     fff = open('realizations/run%d.txt' % j, 'w')
     for mra,t,p in zip(mr.astype(str), y_true.astype(float), y_pred.astype(float)):
